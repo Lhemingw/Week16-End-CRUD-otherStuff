@@ -1,0 +1,25 @@
+body{
+    background-color: lightgray;
+}
+
+.header {
+    padding: 50px;
+    text-align-last: left;
+    background: #3ac0a5;
+    color: white;
+    font-size: 30px;
+   
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    border: #000; /* Add a border around the container */ 
+    padding: 5px; /* Add some padding for spacing */
+    margin: 0px; /* Add margin to separate containers */
+  }
+
+  .button{
+    margin-left: 10px;
+    }
+    
