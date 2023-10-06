@@ -10,28 +10,29 @@ export default function About () {
 
 </div>    
       <p>Divide amount of FED tax, State, Both FICA by Earning total for this pay. 
-        You can do a yearly one by using YTD totals for tax/earnings</p>
+        You can do a yearly one by using YTD totals for tax/earnings.  To get a percent you divide little by big.</p>
     {/* <!-----------I want to put here the capability to add a way to estimate your take home pay--> */}
     <br/>
     <br/>
-    <br/>
-    <table class="container-table">
+    <br>
+    </br>
+    <table className="container-table">
         <thead>
             <tr>
                 <th>WORKERS</th>
             </tr>
         </thead>
         <tbody>
-            <tr class="container-table">
-                <td class="boxed-header">Fed</td>
-                <td class="boxed-header">State</td>
-                <td class="boxed-header">FICA-Med</td>
-                <td class="boxed-header">FICA-SS</td>
+            <tr className="container-table">
+                <td className="boxed-header">Fed</td>
+                <td className="boxed-header">State</td>
+                <td className="boxed-header">FICA-Med</td>
+                <td className="boxed-header">FICA-SS</td>
             </tr>
         </tbody>
     </table>
 
-    <table class="container-tabel">
+    <table className="container-table">
         <thead>
             <tr>
                 <th>EMPLOYER</th>
@@ -39,10 +40,10 @@ export default function About () {
         </thead>
         <tbody>
             <tr>
-                <td class="boxed-header">Fed</td>
-                <td class="boxed-header">State</td>
-                <td class="boxed-header">FICA-Med</td>
-                <td class="boxed-header">FICA-SS</td>
+                <td className="boxed-header">Fed</td>
+                <td className="boxed-header">State</td>
+                <td className="boxed-header">FICA-Med</td>
+                <td className="boxed-header">FICA-SS</td>
             </tr>
         </tbody>       
        

@@ -40,9 +40,6 @@ export default function Finances() {
     const [newTotalTax, setNewTotalTax] =useState('')
     const [newTotalSaving, setNewTotalSaving] =useState('')  
     
-    const [updatedPayCheck, setUpdatedPayCheck] =useState('')
-    const [updatedTotalTax, setUpdatedTotalTax] =useState('')
-    const [updatedTotalSaving, setUpdatedTotalSaving] =useState('')
 
     //Make sure you set up a API that you can CRUD to, such as mockAPI or use a JSON server like in the week 11/12 labs.
     const MOCK_API_URL = 'https://64e55febc55563802914592e.mockapi.io/Finances'

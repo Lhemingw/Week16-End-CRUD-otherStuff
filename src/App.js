@@ -1,16 +1,20 @@
 import React from 'react';
 import './App.css';
-import {BrowserRouter as Router, 
-  Switch, 
+import Header from './Components/header';
+import  Footer  from './Components/footer';
+// import Nav from "react-bootstrap/Nav";
+import {BrowserRouter as Router,
   Route, 
+  Switch, 
   Link,
-  useRouteMatch,
 } from 'react-router-dom';
 
   
 import Home from './routes/Home'
 import About from './routes/About'
 import Finances from './routes/Finances'
+
+
 //import AboutFinance from './Components/AboutFinance'
 /** Instruction:
  *    This is a boiler plate, or a "starting point" for React Router.
@@ -44,8 +48,12 @@ import Finances from './routes/Finances'
 export default function App() {
   return (
     <>
-    <div>
-      <h1>Hello World 🌎</h1>
+    <div className ="App">
+     <Footer />
+     <Header />
+    
+     {/* <Copyright /> */}
+      {/* <h1>Hello World 🌎</h1> */}
     </div>
      
     <Router>
@@ -63,7 +71,7 @@ export default function App() {
               <Link to="/finances">Finance</Link>
             </li>
             <li>
-              {/* <Link to='/aboutfinances'>About Finance</Link> */}
+              {/* <Link to='/copyright'>Copyright</Link> */}
             </li>
           </ul>
         </nav>
@@ -78,6 +86,10 @@ export default function App() {
           </Route>  */}
 
         <Switch>
+          {/* <Route path ="/copyright">
+            <Copyright /> 
+           </Route> */}
+
           <Route path ="/finances">
             <Finances />
           </Route>
