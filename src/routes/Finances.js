@@ -1,16 +1,21 @@
 import React from "react";
-import AboutFinance from "../Components/AboutFinance";
-import TableFinance from '../Components/TableFinance'
-import { Route, Routes } from 'react-router-dom';
 import { useState, useEffect } from "react";
-import App from "../App";
+import AboutFinance from "../Components/AboutFinance";
+import TableFinance from '../Components/TableFinance';
 
 //import { Route, Routes, useState } from 'react-router-dom';
 
 export default function Finances() {
-	const [users,setUsers] =useState([])
-
-    const [ newUser, setNewUser  ] =useState([
+const [users,setUsers] =useState([])
+    const [newPayCheck, setNewPayCheck] =useState('')
+    const [newTotalTax, setNewTotalTax] =useState('')
+    const [newTotalSaving, setNewTotalSaving] =useState('')  
+    
+    const [updatedPayCheck, setUpdatedPayCheck] =useState('')
+    const [updatedTotalTax, setUpdatedTotalTax] =useState('')
+    const [updatedTotalSaving, setUpdatedTotalSaving] =useState('')
+	
+const [ newUser, setNewUser  ] =useState([
         {
           payCheck: '',
           tax: '',
@@ -36,9 +41,6 @@ export default function Finances() {
         })
       }
 // Setting the post up, use an empty string
-    const [newPayCheck, setNewPayCheck] =useState('')
-    const [newTotalTax, setNewTotalTax] =useState('')
-    const [newTotalSaving, setNewTotalSaving] =useState('')  
     
 
     //Make sure you set up a API that you can CRUD to, such as mockAPI or use a JSON server like in the week 11/12 labs.
@@ -95,10 +97,11 @@ export default function Finances() {
     }
     
     return (
-        <div className="App">
-            <h1>Hi welcome to the finances page</h1>
+    <div>
+        {/* Had className ="App", took out */}
+            <h1>Hi, welcome to the finances page</h1>
             <AboutFinance/>
-            <TableFinance users={users}/>
+            <TableFinance users={users} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
             {/* <TableFinance handleDelete={handleDelete}/> */}
             {/* <TableFinance handleUpdate={handleUpdate}/>  */}
             {/* Is this the right way of handling these delete/update */}
@@ -106,16 +109,19 @@ export default function Finances() {
             <h3 className="container">POST new Pay Check</h3>
 
             <label className="container"> Total Paycheck</label>
- {/* Label is on top, input is bottom that has the e.target.value to get it initiated */}
-            <input onChange={(e) => setNewPayCheck(e.target.value)}></input>
+        {/* Label is on top, input is bottom that has the e.target.value to get it initiated */}
+            {/* <input type="text" onChange={(e) => setNewPayCheck(e.target.value)}></input> */}
+            <input type="text"name="submit"value={newPayCheck}onChange={(e) =>setNewPayCheck(e.target.value)}/>
         <br></br>
         <br></br>
             <label className="container">Total Tax</label> 
-            <input onChange={(e) => setNewTotalTax(e.target.value)}></input>
+            <input type="text"name="submit"value={newTotalTax}onChange={(e) =>setNewTotalTax(e.target.value)}/>
+            {/* <input type="text" onChange={(e) => setNewTotalTax(e.target.value)}></input> */}
         <br></br>
         <br></br> 
             <label className="container">Total Saving</label>
-            <input onChange={() => setNewTotalSaving(e.target.value)}></input>
+            <input type="text"name="submit"value={newTotalSaving}onChange={(e) =>setNewTotalSaving(e.target.value)}/>
+        {/* <input type="text" onChange={() => setNewTotalSaving(e.target.value)}></input> */}
             <button className="button" onClick={() => postNewUser(e)}>Submit</button> 
         </form>
             <h2>Add Claculator</h2>
@@ -127,17 +133,22 @@ export default function Finances() {
                     totalSaving: {user.totalSaving}
                     <button className="button"onClick={() => deleteUser(user.id)}>Delete</button>
                 </div>
+
                 <form>
                     <h3>Update This Paycheck</h3>
                     <label className= "container">Updated Pay Check</label>
-                    <input onChange={()=> setUpdatedPayCheck(e.target.value)}></input>
+                    <input type="text"name="submit"value={updatedPayCheck}onChange={(e) =>setUpdatedPayCheck(e.target.value)}/>
+                    {/* <input type="text" onChange={(e)=> setUpdatedPayCheck(e.target.value)}></input> */}
+                   
                     
                     <label className="container">Update Pay Check-after tax</label>
-                    <input onChange ={() => setUpdatedTotalTax(e.target.value)}></input>
+                    <input type="text"name="submit"value={updatedTotalTax}onChange={(e) =>setUpdatedTotalTax(e.target.value)}/>
+                    {/* <input type="text" onChange ={(e) => setUpdatedTotalTax(e.target.value)}></input> */}
         <br></br>
         <br></br>
                     <label className="container">Updated Total Saving</label><br></br>
-                    <input onChange={(e) => setUpdatedTotalSaving(e.target.value)}></input>
+                    <input type="text"name="submit"value={updatedTotalSaving}onChange={(e) =>setUpdatedTotalSaving(e.target.value)}/>
+                    {/* <input type="text" onChange={(e) => setUpdatedTotalSaving(e.target.value)}></input> */}
                     <button className="button"onClick={() => updateUser(e,user)}>Update User</button>
                 </form>
                 </div>
