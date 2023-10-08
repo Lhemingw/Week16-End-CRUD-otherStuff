@@ -49,8 +49,16 @@
 // 3. Amount to sav, have click buttons-10%/20%, 2 categories 
 // 4. Need to bring this to Finance*/}
 
+// TO Make Work:
+// Need days of the week button to work.
+// Need to fix spendable money, workers, employes days of the week sorted get that centered
+
 /* </tbody>        */
 
 // <!---I got the table headers spaced because of adding a block to the th called boxed header-->    
 
-// <!---I got the table headers spaced because of adding a block to the th
+// <!---I got the table headers spaced because of adding a block to the the
+
+// from setting.json tried to use to get my circle of doom stoping // "json.validate.enable":false,
+      
+    // "json.schemaDownload.enable": true,

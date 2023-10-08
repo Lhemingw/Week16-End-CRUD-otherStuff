@@ -3,7 +3,7 @@ export default function About () {
         <div>
             About Route
             <>
-<body>
+
     <h2>PayCheck EstimatePG2</h2>
     {/* <!-----Worker: Fed, State, FICA-Med, FICA-SS, Workers Comp-use flex box or grid----> */}
 <div>
@@ -48,28 +48,14 @@ export default function About () {
         </tbody>       
        
         {/* <!---I got the table headers spaced because of adding a block to the th called boxed header-->  */}    
-            
+        
     </table>
     {/* <!---I got the table headers spaced because of adding a block to the th called boxed header-->  */}
         
-        <tr>
-            <th>Worker: Fed,</th>
-            <th>Worker: State</th>
-            <th>Worker: FICA-med</th>
-            <th>Worker: FICA-ss</th>
-            <th>Workers comp</th>
-            <br/>
-            <br/>
-
-            <th>EMPLOYER PAID FICA-MEDICARE</th>
-            <th>EMPLOYER PAID FICA-SOC SEC</th>
-            <th>NM WORKERS COMP QUARTER</th>
-            <th>NM WORKERS COMP INSURANCE</th>
-        </tr>
 
     {/* <img class="img" height =600px src="http://www.photos-public-domain.com/wp-content/uploads/2018/03/personal-finance-money.jpg" alt=""> <!---------------------Execute java script; - put your SCRIPT tag at the end before closing BODY tag
 2- put your SCRIPT in HEAD with the defer attribute--> */}
-</body>
+
 </>
         </div>
     )

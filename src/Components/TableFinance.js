@@ -1,18 +1,19 @@
 import React from "react";
 
-export default function Table({users}){
+export default function Table({users, handleDelete, handleUpdate, handleUpdatePayHours}){
     return (
         <div className="mt-5">
-        <h3 className="text-center">Prior Pay Periods</h3> 
+        <h3 className="header">Prior Pay Periods</h3> 
         {/* I want to put the css header */}
         <table className="table table-bordered-success">
+            {/* This is bootstrap */}
             
         <thead>
         
             <tr>
-                <th >Paycheck</th>
-                <th >Tax</th>
-                <th >Total Tax</th>
+                <th>Paycheck</th>
+                <th>Tax</th>
+                <th>Total Tax</th>
                 <th>Total Saving</th>
                 <th>Delete</th>
                 <th>Update</th>
@@ -28,14 +29,18 @@ export default function Table({users}){
              <td>{user.totalTax}</td>
              <td>{user.totalSaving}</td>
 
-             <tr>
+         
                 <td>
-                <button onClick={() => handleDelete()}>Delete</button>
+                <button onClick={(e) => handleDelete(e)}>Delete</button>
                 </td>
                 <td>
-                <button onClick={() => handleUpdate()}>Update</button>   
+                <button onClick={(e) => handleUpdate(e)}>Update</button>   
                 </td>
-            </tr>
+                <td>
+                <button onClick={(e) => handleUpdatePayHours(e)}>Update</button>   
+                </td>
+          
+
              
              {/* <button onClick={() => handleDelete()}>Delete</button> */}
 

@@ -49,7 +49,6 @@ export default function App() {
   return (
     <>
     <div className ="App">
-     <Footer />
      <Header />
     
      {/* <Copyright /> */}
@@ -78,11 +77,11 @@ export default function App() {
 
         {/* This is the logic that switches each path.
           1. Give your Route component a path attribute so users know where they are.
-              This is linked directly with "to attribute" on your nav above.
+          This is linked directly with "to attribute" on your nav above.
           2. Inside that Route component, render the component you want users
               to see when they click on that route.
-          <Route path="/">
-            <Component/>
+              <Route path="/">
+              <Component/>
           </Route>  */}
 
         <Switch>
@@ -104,6 +103,7 @@ export default function App() {
         </Switch>
       </div>
     </Router>
+<Footer />
     </>
   );
 }

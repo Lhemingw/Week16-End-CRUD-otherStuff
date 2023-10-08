@@ -6,7 +6,7 @@ export default function Header() {
 		return (
             <>
             
-            <Card border="bg primary"className="text-center">
+            <Card className="text-center" border="warning"style={{ width: '100rem' }}>
       <Card.Header>Promineo Tech 2023</Card.Header>
       <Card.Body>
         <Card.Title>WEEK 16-18 FINAL</Card.Title>

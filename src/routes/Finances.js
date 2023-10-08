@@ -2,6 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import AboutFinance from "../Components/AboutFinance";
 import TableFinance from '../Components/TableFinance';
+import Home from "./Home";
 
 //import { Route, Routes, useState } from 'react-router-dom';
 
@@ -99,39 +100,44 @@ const [ newUser, setNewUser  ] =useState([
     return (
     <div>
         {/* Had className ="App", took out */}
-            <h1>Hi, welcome to the finances page</h1>
+            <h4>Hi, welcome to the finances page</h4>
             <AboutFinance/>
             <TableFinance users={users} handleDelete={handleDelete} handleUpdate={handleUpdate}/>
+            <Home handleupdatePayHours={handleUpdate}/>
             {/* <TableFinance handleDelete={handleDelete}/> */}
             {/* <TableFinance handleUpdate={handleUpdate}/>  */}
             {/* Is this the right way of handling these delete/update */}
         <form>
-            <h3 className="container">POST new Pay Check</h3>
-
-            <label className="container"> Total Paycheck</label>
+            <div className=" row text-center">
+            <h3 className="header ">POST new Pay Check</h3>
+                {/* <div className="col-md-6 ">
+            
+            </div> */}
+            <div className="col-med-6">
+            <label className="mb-3 button2"> Total Paycheck</label>
         {/* Label is on top, input is bottom that has the e.target.value to get it initiated */}
             {/* <input type="text" onChange={(e) => setNewPayCheck(e.target.value)}></input> */}
-            <input type="text"name="submit"value={newPayCheck}onChange={(e) =>setNewPayCheck(e.target.value)}/>
-        <br></br>
-        <br></br>
-            <label className="container">Total Tax</label> 
-            <input type="text"name="submit"value={newTotalTax}onChange={(e) =>setNewTotalTax(e.target.value)}/>
+            <input type="text" className="col-sm-1 button2"name="submit"value={newPayCheck}onChange={(e) =>setNewPayCheck(e.target.value)}/>
+     
+            <label className="mb-3 button2">Total Tax</label> 
+            <input type="text" className="col-sm-1 button2" name="submit"value={newTotalTax}onChange={(e) =>setNewTotalTax(e.target.value)}/>
             {/* <input type="text" onChange={(e) => setNewTotalTax(e.target.value)}></input> */}
-        <br></br>
-        <br></br> 
-            <label className="container">Total Saving</label>
-            <input type="text"name="submit"value={newTotalSaving}onChange={(e) =>setNewTotalSaving(e.target.value)}/>
+      
+            <label className="mb-3 form-group button2">Total Saving</label>
+            <input type="text" className="mb-5 col-sm-1 button2"name="submit"value={newTotalSaving}onChange={(e) =>setNewTotalSaving(e.target.value)}/>
         {/* <input type="text" onChange={() => setNewTotalSaving(e.target.value)}></input> */}
-            <button className="button" onClick={() => postNewUser(e)}>Submit</button> 
+            <button className="button" onClick={(e) => postNewUser(e)}>Submit</button>
+            </div> 
+            </div>
         </form>
-            <h2>Add Claculator</h2>
+            {/* <h2>Add Claculator Add a 2nd one here</h2> */}
             {users.map((user,index) =>(
             <div className ="userContainer"key={index}>
                 <div>
                     payCheck: {user.payCheck}
                     totalTax: {user.tax}
                     totalSaving: {user.totalSaving}
-                    <button className="button"onClick={() => deleteUser(user.id)}>Delete</button>
+                    <button className="button"onClick={(e) => deleteUser(user.id)}>Delete</button>
                 </div>
 
                 <form>
@@ -144,12 +150,11 @@ const [ newUser, setNewUser  ] =useState([
                     <label className="container">Update Pay Check-after tax</label>
                     <input type="text"name="submit"value={updatedTotalTax}onChange={(e) =>setUpdatedTotalTax(e.target.value)}/>
                     {/* <input type="text" onChange ={(e) => setUpdatedTotalTax(e.target.value)}></input> */}
-        <br></br>
-        <br></br>
-                    <label className="container">Updated Total Saving</label><br></br>
+       
+                    <label className="container">Updated Total Saving</label>
                     <input type="text"name="submit"value={updatedTotalSaving}onChange={(e) =>setUpdatedTotalSaving(e.target.value)}/>
                     {/* <input type="text" onChange={(e) => setUpdatedTotalSaving(e.target.value)}></input> */}
-                    <button className="button"onClick={() => updateUser(e,user)}>Update User</button>
+                    <button className="button"onClick={(e) => updateUser(e,user)}>Update</button>
                 </form>
                 </div>
             ))}
